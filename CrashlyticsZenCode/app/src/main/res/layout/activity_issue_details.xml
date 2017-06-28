@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zencode.dinesh.crashlyticszencode.IssueDetailsActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/parentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <TextView
+                    android:id="@+id/DecDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dec"
+                    android:layout_below="@+id/avatar"
+                    android:layout_alignRight="@+id/DateTV"
+                    android:layout_alignEnd="@+id/DateTV" />
+
+                <TextView
+                    android:id="@+id/DateTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Date"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_below="@+id/DecTv"
+                    android:layout_toRightOf="@+id/avatar"
+                    android:layout_toEndOf="@+id/avatar" />
+
+                <ImageView
+                    android:id="@+id/avatar"
+                    android:layout_width="100dp"
+                    android:padding="3dp"
+                    android:src="@mipmap/ic_launcher_round"
+                    android:layout_height="100dp"
+                    android:scaleType="centerCrop"
+                    />
+
+                <TextView
+                    android:id="@+id/TitleTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Title"
+                    android:layout_margin="3dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/avatar"
+                    android:layout_toEndOf="@+id/avatar" />
+
+                <TextView
+                    android:id="@+id/NameTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_below="@+id/TitleTv"
+                    android:layout_toEndOf="@+id/avatar"
+                    android:layout_toRightOf="@+id/avatar"
+                    android:text="Name" />
+
+                <TextView
+                    android:id="@+id/DecTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dec"
+                    android:visibility="gone"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_below="@+id/NameTV"
+                    android:layout_toRightOf="@+id/avatar"
+                    android:layout_toEndOf="@+id/avatar" />
+
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/otc_doctor_visit_line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:layout_below="@+id/parentLayout"
+                android:background="#cfcfcf" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_below="@+id/otc_doctor_visit_line">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Comments" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/commentRecycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/textView">
+
+                </android.support.v7.widget.RecyclerView>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
