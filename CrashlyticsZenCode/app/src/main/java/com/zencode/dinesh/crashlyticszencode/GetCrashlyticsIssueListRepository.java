@@ -22,7 +22,7 @@ import java.util.List;
  */
 
 class GetCrashlyticsIssueListRepository {
-    public static final String TABLE_CRASHLYTICS_ISSUE = "mst_Crashlytics_Issue";
+    public static final String TABLE_CRASH_LYTICS_ISSUE = "mst_Crashlytics_Issue";
     public static final String _Id = "_id";
     public static final String TITLE = "Title";
     public static final String USERNAME = "User_Name";
@@ -125,7 +125,7 @@ class GetCrashlyticsIssueListRepository {
 
 
     public static String createCrashlyticsMaster() {
-        String CREATE_DCR_MASTER = "CREATE TABLE IF NOT EXISTS " + TABLE_CRASHLYTICS_ISSUE + "(" + _Id + " INTEGER PRIMARY KEY AUTOINCREMENT," + TITLE + " TEXT," + USERNAME + " TEXT,"
+        String CREATE_DCR_MASTER = "CREATE TABLE IF NOT EXISTS " + TABLE_CRASH_LYTICS_ISSUE + "(" + _Id + " INTEGER PRIMARY KEY AUTOINCREMENT," + TITLE + " TEXT," + USERNAME + " TEXT,"
                 + DESCRIPATION + " TEXT," + UPDATEDATE + " TEXT)";
         return CREATE_DCR_MASTER;
     }
@@ -133,7 +133,7 @@ class GetCrashlyticsIssueListRepository {
     public void crashlyticsBulkInsert(List<Issues> issuesList) {
         try {
             DBConnectionOpen();
-            database.delete(TABLE_CRASHLYTICS_ISSUE, null, null);
+            database.delete(TABLE_CRASH_LYTICS_ISSUE, null, null);
             ContentValues contentValues = new ContentValues();
             int count = 0;
             for (Issues issues : issuesList) {
@@ -143,7 +143,7 @@ class GetCrashlyticsIssueListRepository {
                 contentValues.put(USERNAME, issues.getLogin());
                 contentValues.put(DESCRIPATION, issues.getBody());
                 contentValues.put(UPDATEDATE, issues.getUpdated_at());
-               long rowCount = database.insert(TABLE_CRASHLYTICS_ISSUE, null, contentValues);
+               long rowCount = database.insert(TABLE_CRASH_LYTICS_ISSUE, null, contentValues);
             }
         } catch (Exception e) {
 
